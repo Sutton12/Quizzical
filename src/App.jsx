@@ -1,8 +1,9 @@
 import React from "react"
 import {nanoid} from "nanoid"
-
 import Start from "./components/Start"
 import Question from "./components/Question"
+import blobYellow from "./images/blob-yellow.svg"
+import blobBlue from "./images/blob-blue.svg"
 
 export default function App(){
     
@@ -121,6 +122,9 @@ export default function App(){
     }  
       
     return (
+        <>
+        <img src={blobYellow} className="blob top-blob"/>
+        <img src={blobBlue} className="blob bottom-blob" />
         <main>
             {start ? "" :
             <Start
@@ -142,6 +146,7 @@ export default function App(){
             </div>
    
         </main>
+        </>
     )
 
 }
