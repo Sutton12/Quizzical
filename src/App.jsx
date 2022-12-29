@@ -122,9 +122,7 @@ export default function App(){
     }  
       
     return (
-        <>
-        <img src={blobYellow} className="blob top-blob"/>
-        <img src={blobBlue} className="blob bottom-blob" />
+        
         <main>
             {start ? "" :
             <Start
@@ -146,7 +144,6 @@ export default function App(){
             </div>
    
         </main>
-        </>
     )
 
 }
