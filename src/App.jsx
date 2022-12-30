@@ -97,6 +97,7 @@ export default function App(){
         })
         setFinalScore(score + "/" + quizQuestions.length)
         score === quizQuestions.length ? setShowConfetti(true) : null
+
     }
 
       
@@ -122,7 +123,8 @@ export default function App(){
         setQuizOptions({category:"", difficulty:""})
         setShowConfetti(false)
     }  
-      
+    
+
     return (
         <>
         <img src={blobYellow} className="blob blob-top top-blob"/>
@@ -146,7 +148,7 @@ export default function App(){
                 </button>}
             </div>
         </main>
-        {showConfetti && <Confetti height={document.body.scrollHeight} />}        
+        {showConfetti && <Confetti height={document.body.scrollHeight + 38} />}        
         </>
     )
 
