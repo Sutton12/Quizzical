@@ -8,7 +8,6 @@ import blobBlue from "./images/blob-blue.svg"
 export default function App(){
     
     const [quizOptions, setQuizOptions] = React.useState({category:"", difficulty:""})
-    const [loading, setLoading] = React.useState(true)
     const [start, setStart] = React.useState(false)
     const [quizData, setQuizData] = React.useState([])
     const [quizQuestions, setQuizQuestions] = React.useState([])
@@ -122,7 +121,9 @@ export default function App(){
     }  
       
     return (
-        
+        <>
+        <img src={blobYellow} className="blob blob-top top-blob"/>
+        <img src={blobBlue} className="blob bottom-blob"/>
         <main>
             {start ? "" :
             <Start
@@ -140,10 +141,10 @@ export default function App(){
                 >
                     {showAnswers ? "Play Again" : "Check Answers" }
                 </button>}
-                
             </div>
    
         </main>
+        </>
     )
 
 }

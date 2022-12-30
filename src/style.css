@@ -5,7 +5,8 @@
 body {
     background: #F5F7FB;
     font-family: "Inter", sans-serif;
-    color: #293264
+    color: #293264;
+    position:relative;
 }
 main {
     max-width:640px;
@@ -15,11 +16,12 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction:column;
-    padding:20px 40px;
+    padding:40px 20px;
 }
 
 .blob {
     position:absolute;
+    z-index:-1
 }
 .top-blob {
     top:0;
@@ -30,10 +32,20 @@ main {
     left:0;
 }
 
+@media only screen and (max-width:480px){
+    .bottom-blob {
+        max-width:100px;
+    }
+    .top-blob {
+        max-width:120px;
+    }
+}
+
 .start-screen {
     text-align:center;
     max-width:100%;
 }
+
 
 .quiz-options {
     display:flex;
