@@ -25,7 +25,6 @@ export default function Question(props){
             <ul className="options">
                 {answers}
             </ul>
-       
         </div>
     )
 }

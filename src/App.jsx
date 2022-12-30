@@ -4,6 +4,7 @@ import Start from "./components/Start"
 import Question from "./components/Question"
 import blobYellow from "./images/blob-yellow.svg"
 import blobBlue from "./images/blob-blue.svg"
+import Confetti from 'react-confetti'
 
 export default function App(){
     
@@ -13,7 +14,7 @@ export default function App(){
     const [quizQuestions, setQuizQuestions] = React.useState([])
     const [showAnswers, setShowAnswers] = React.useState(false)
     const [finalScore, setFinalScore] = React.useState()
-
+    const [showConfetti, setShowConfetti] = React.useState(false)
         
     //Fetch API
     React.useEffect(() =>{      
@@ -95,6 +96,7 @@ export default function App(){
             question.isCorrect ? score = score + 1 : "" 
         })
         setFinalScore(score + "/" + quizQuestions.length)
+        score === quizQuestions.length ? setShowConfetti(true) : null
     }
 
       
@@ -118,6 +120,7 @@ export default function App(){
         setShowAnswers(false)
         setStart(false)
         setQuizOptions({category:"", difficulty:""})
+        setShowConfetti(false)
     }  
       
     return (
@@ -142,8 +145,8 @@ export default function App(){
                     {showAnswers ? "Play Again" : "Check Answers" }
                 </button>}
             </div>
-   
         </main>
+        {showConfetti && <Confetti height={document.body.scrollHeight} />}        
         </>
     )
 
